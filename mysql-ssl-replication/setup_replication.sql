@@ -10,9 +10,7 @@ CHANGE MASTER TO
     MASTER_PORT=3307,
     MASTER_USER='repl',
     MASTER_PASSWORD='repl123',
-    MASTER_LOG_FILE='<SHOW MASTER STATUS查看>',
-    MASTER_LOG_POS=<SHOW MASTER STATUS查看>,
     MASTER_SSL=1,
-    MASTER_SSL_CA='/var/lib/mysql/ca.pem';
-
+    MASTER_SSL_CA='/var/lib/mysql/ca.pem',
+    MASTER_AUTO_POSITION=1;
 START SLAVE;

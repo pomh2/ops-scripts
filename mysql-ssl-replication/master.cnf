@@ -3,3 +3,5 @@
 server-id=1
 log-bin=mysql-bin
 binlog-do-db=shop
+gtid_mode=ON
+enforce-gtid-consistency=ON

@@ -3,4 +3,6 @@
 server-id=2
 relay-log=mysql-relay-bin
 read-only=1
+gtid_mode=ON
+enforce-gtid-consistency=ON
 

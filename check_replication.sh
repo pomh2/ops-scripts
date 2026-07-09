@@ -1,10 +1,9 @@
-
 #!/bin/bash
 #Mysql主从复制监控脚本
 HOST="127.0.0.1"
 PORT="3308"
-USER="root"
-PASS="123456"
+USER="monitor"
+PASS="monitor123"
 LOG_FILE="./replication_status.log"
 
 #查询从库状态
