@@ -39,4 +39,5 @@ fi
 echo "磁盘使用:" | tee -a $LOG_FILE
 df -h / | grep -v Filesystem | awk '{print "  路径:"$6"  已用:"$3"/"$2"  使用率:"$5}' | tee -a $LOG_FILE
 
+
 echo "" | tee -a $LOG_FILE
