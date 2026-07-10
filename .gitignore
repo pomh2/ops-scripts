@@ -1,0 +1,9 @@
+# 日志文件
+*.log
+# Windows 临时文件
+Thumbs.db
+*.tmp
+
+# IDE
+.vscode/
+.idea/
