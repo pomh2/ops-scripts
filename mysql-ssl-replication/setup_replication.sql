@@ -1,10 +1,16 @@
--- 在主库执行
-CREATE USER 'repl'@'%' IDENTIFIED BY 'repl123';
+--==========================
+-- 主库执行：创建复制账号
+--==========================
+CREATE USER IF NOT EXISTS 'repl'@'%' IDENTIFIED BY 'repl123';
 GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';
 ALTER USER 'repl'@'%' REQUIRE SSL;
 FLUSH PRIVILEGES;
 
--- 在从库执行
+--==========================
+-- 从库执行：指定主库 + 启动复制
+--==========================
+-- 先停掉（如果已在运行），再重新配置，最后启动
+STOP SLAVE;
 CHANGE MASTER TO
     MASTER_HOST='host.docker.internal',
     MASTER_PORT=3307,
