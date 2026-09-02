@@ -44,6 +44,7 @@
 | `ssl.cnf` | SSL 证书路径（ca + cert + key） |
 | `ca.pem` | CA 根证书（从库验证主库身份用） |
 | `setup_replication.sql` | CHANGE MASTER TO + GTID 完整步骤 |
+| `schema.sql` | shop 库 + orders 表结构（主从各执行一次） |
 
 ### 技术链路
 

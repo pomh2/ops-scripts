@@ -3,7 +3,7 @@
 #读写分离验证： 主库写-> 从库读
 
 echo "========写操作 ->主库（3307） ========"
-MSYS_NO_PATHSONV=1 docker exec mysql-master mysql -uroot -p123456 -e "
+MSYS_NO_PATHCONV=1 docker exec mysql-master mysql -uroot -p123456 -e "
 INSERT INTO shop.orders (user_id, product_id,quantity, amount) VALUES (1, 2, 1, 14999.00);
 SELECT '---主库最新数据 ---' AS '';
 SELECT * FROM shop.orders ORDER BY id DESC LIMIT 3;
