@@ -1,0 +1,28 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  # Prometheus 自身
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # MySQL 主库 exporter
+  - job_name: 'mysql_master'
+    static_configs:
+      - targets: ['mysqld-exporter-master:9104']
+        labels:
+          role: 'master'
+
+  # MySQL 从库 exporter（含复制状态指标）
+  - job_name: 'mysql_slave'
+    static_configs:
+      - targets: ['mysqld-exporter-slave:9105']
+        labels:
+          role: 'slave'
+
+  # 宿主机（WSL2 虚拟机，所有容器运行的地方）
+  - job_name: 'node'
+    static_configs:
+      - targets: ['node-exporter:9100']
